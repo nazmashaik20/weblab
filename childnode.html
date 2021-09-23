@@ -1,0 +1,53 @@
+<!doctype html>
+<html>
+<head>
+   <script language="javascripte">
+function funDisplayInfo()
+{
+var xhttp=null;
+var flag=0;
+var userid= document . frm.uname.valu;
+var xmlDoc=nae ActiveXObject("microsoft.xmldom");
+xmldoc . load("user.xml");
+var noOfusers=xmlDoc.getElementsByTagName("userlist")[0].childnodes.length
+for(var i=0;i<parseInt(noOfusers);i++)
+{
+var uid=xmldoc.getelementsbytagname("user")[i].childnodes[0].childnodes[0].nodevalues;
+if(uid==userid))
+{
+document.write("<h1> user details</h1>");
+var name=
+xmldoc.getelementsbutagname("user")[i].childnodes[1].childnodes[0].nodevalues;
+var address=
+xmldoc.getelementsbutagname("user")[i].childnodes[2].childnodes[0].nodevalues;
+var  phone=
+xmldoc.getelementsbutagname("user")[i].childnodes[3].childnodes[0].nodevalues;
+var email=
+xmldoc.getelementsbutagname("user")[i].childnodes[4].childnodes[0].nodevalues;
+document.write("<br><b>user id:&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp"+uid)
+document.write("<br>user name:&nbsp"=userName);
+document.write("<br> Address:&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp"+Address);
+document.write("<br>phone no:&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp"+phone);
+document.write("<br>E-mail:&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp"+Address);
+flag=1;
+break;
+}
+}
+if(flag==0)
+{
+alert("invalid user");
+}
+}
+</script>
+</head>
+<body>
+<center>
+<h1><b>user information</h1>
+<form name="frm">
+user id:<input type="text" name="uname"></br>
+<input type="button" name="btn" value="submit" onclick="funcdisplayinfo()">
+</form>
+</center>
+</body>
+</html>
+
